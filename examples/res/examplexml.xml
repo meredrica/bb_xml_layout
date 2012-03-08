@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns="http://www.meredrica.org/bb/gui/xml">
+	<layout>
+		<field x="0" alias="top.left" y="0" attachpoint="north-west" />
+		<field x="0.5" alias="top" y="0" attachpoint="north" />
+		<field x="1" alias="top.right" y="0" attachpoint="north-east" />
+		<field x="1" alias="right" y="0.5" attachpoint="east" />
+		<field x="1" alias="bottom.right" y="1" attachpoint="south-east" />
+		<field x="0.5" alias="bottom" y="1" attachpoint="south" />		
+		<field x="0" alias="bottom.left" y="1" attachpoint="south-west" />
+		<field x="0" alias="left" y="0.5" attachpoint="west" />
+		<field x="0.5" alias="center" y="0.5" attachpoint="center" />
+	</layout>
+</screen>

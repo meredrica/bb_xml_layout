@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns="http://www.meredrica.org/bb/gui/xml">
+	<layout>
+	
+		<!-- We position some anchor field somewhere on the screen -->
+		<field x="0.3" alias="anchor" y="0.3" attachpoint="north-west" />
+		
+		<!--
+			Next we position a field right bottom left 
+			We do not need to give any value to x,y as this would only move the field
+			the attachpoint tells the layouter which point of the field we are defining to take.
+			The relativeattachpoint is the point the layouting engine selects on the anchor to this field.
+			The relativeto field is some alias in the screen.
+		-->
+		<field x="0" alias="bottom.left" y="0" attachpoint="north-west" relativeattachpoint="south-east" relativeto="anchor"/>
+		
+		<!-- Next we let 2 fields overlap a bit -->
+		<field x="0" alias="overlapping.bottom" y="-0.01" attachpoint="north" relativeattachpoint="south" relativeto="anchor"/>
+		
+		<!--
+			We can also position relative to relative fields.
+			This time, we specify an x and y value so we get some space between the fields.
+			We can, as demonstrated, use negative values.
+		-->
+		<field x="-0.05" alias="relative.to.relative" y="-0.05" attachpoint="south-west" relativeattachpoint="north-east" relativeto="bottom.left"/>
+		
+	</layout>
+</screen>

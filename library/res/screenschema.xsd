@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.meredrica.org/bb/gui/xml" targetNamespace="http://www.meredrica.org/bb/gui/xml"
+	elementFormDefault="qualified">
+	
+	<xs:element name="screen">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="layout" type="screen.layout"
+					minOccurs="1" maxOccurs="1" />
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="screen.layout">
+		<xs:sequence>
+			<xs:element name="field" type="field" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="field">
+		<xs:attributeGroup ref="field.attributes" />
+	</xs:complexType>
+
+	<xs:attributeGroup name="field.attributes">
+		<xs:attribute name="alias" type="xs:ID" use="required" />
+		<xs:attribute name="x" type="xs:double" use="required" />
+		<xs:attribute name="y" type="xs:double" use="required" />
+		<xs:attribute name="maxwidth" type="xs:double" use ="optional"/>
+		<xs:attribute name="maxheight" type="xs:double" use ="optional"/>
+		<xs:attribute name="attachpoint" type="field.attachpoints" />
+		<xs:attribute name="relativeto" type="xs:IDREF" use="optional" />
+		<xs:attribute name="relativeattachpoint" type="field.attachpoints"
+			use="optional" />
+	</xs:attributeGroup>
+
+	<xs:simpleType name="field.attachpoints">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="south" />
+			<xs:enumeration value="north" />
+			<xs:enumeration value="east" />
+			<xs:enumeration value="west" />
+			<xs:enumeration value="center" />
+			<xs:enumeration value="north-west" />
+			<xs:enumeration value="north-east" />
+			<xs:enumeration value="south-east" />
+			<xs:enumeration value="south-west" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
